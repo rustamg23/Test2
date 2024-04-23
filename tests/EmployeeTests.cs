@@ -10,7 +10,8 @@ namespace MyagkieLapki.Tests
         private Animal _animal;
         private Application _application;
         private Client _client;
-        private Shelter _shelter; 
+        private Shelter _shelter;
+        private Cage _cage;
         
         [SetUp]
         public void Setup()
@@ -46,7 +47,17 @@ namespace MyagkieLapki.Tests
         [Test]
         public void ProcessAdoption_ProcessesCorrectly()
         {
+            _shelter = Shelter.GetInstance();
+            _employee = new Employee("Alice Jones", DateTime.Today.AddYears(-10), 10);
+            _cage = _shelter.AddCage(1, "Small");
+            _animal = new Animal(new AnimalPassport("Buddy", DateTime.Today, "Golden", "Wavy", new List<string>()), _cage);
+            _animal.PinnedEmployee = _employee;
+            _employee.PinnedAnimals.Add(_animal);
+            // Create client with a date that simulates past registration
+            _client = new Client("Charlie", DateTime.Today.AddDays(-2));
+            _application = _client.SendApplication(_shelter, _animal, Enums.ApplicationType.Adoption,"AP003");
             // Process the adoption application
+            _client.PayFeeForAction(_shelter, _application, 100);
             _employee.ProcessAdoption(_application);
             
             // Check if the application status is set to Approved

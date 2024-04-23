@@ -24,7 +24,7 @@ namespace MyagkieLapki
         {
             if (application.Type == Enums.ApplicationType.Adoption && application.Status == Enums.ApplicationStatus.Registration)
             {
-                if ((DateTime.Now - application.Client.ClientFromDate).TotalDays >= 1)
+                if ((DateTime.Today - application.Client.ClientFromDate).TotalDays >= 1)
                 {
                     if (PinnedAnimals.Contains(application.Animal))
                     {

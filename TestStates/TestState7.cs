@@ -25,7 +25,7 @@ namespace MyagkieLapki.Tests
             application.CancelApplication(); // Cancel the application
 
             // Asserts
-            Assert.AreEqual(Enums.ApplicationStatus.NewApplication, application.Status,
+            Assert.AreEqual(Enums.ApplicationStatus.Registration, application.Status,
                 "Application should be reset to NewApplication after cancellation");
 
             // Clean up

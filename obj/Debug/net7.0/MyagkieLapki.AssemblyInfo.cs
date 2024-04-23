@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyagkieLapki")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93641f01feb8b482c276e3b50b094c4010ead8ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ccfdd2c39c62734675d58d8e8b8391d2ffbfd46")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyagkieLapki")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyagkieLapki")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
